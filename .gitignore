@@ -1,0 +1,17 @@
+# Ignorar pastas do VSCode
+.vscode/
+
+# Ignorar arquivos de dependências (exemplo de Node.js)
+node_modules/
+
+# Ignorar arquivos de compilação ou build
+/build/
+/dist/
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+
+# Ignorar arquivos do sistema operacional (exemplo Windows e Mac)
+Thumbs.db
+.DS_Store
