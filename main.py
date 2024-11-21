@@ -1,6 +1,14 @@
+"""
+permite que o usuário crie uma nova conta,  acesse uma conta existente ou saia do programa.
+"""
 from models.conta import Conta
 
+
 def main():
+    """
+    Função principal do programa que permite ao usuário escolher entre criar uma nova conta, 
+    acessar uma conta existente ou sair.
+    """
     dados_usuarios = []
     while True:
         print("Bem-vindo ao Banco WordsCity!\n"

@@ -1,8 +1,12 @@
+import re  # Para usar expressões regulares
 from random import randint
 from utils.helpers import menu_transacoes
-import re  # Para usar expressões regulares
 
 class Conta:
+    """
+    A classe permite criar uma conta, acessar a conta e realizar transações.
+    """
+
     def __init__(self):
         self.agencia = "3186"
         self.numero_conta = f"{randint(100000, 999999)}-9"
@@ -14,7 +18,6 @@ class Conta:
         """Cria uma nova conta com dados do cliente."""
         print("Bem-vindo ao banco WordsCity\n"
               "Vamos criar sua conta neste momento.")
-        
         tentativa = 0  # Contador de tentativas para nome válido
         while tentativa < 3:
             self.nome_cliente = input("Digite seu nome completo: \n").title()
@@ -22,12 +25,10 @@ class Conta:
             # Verificar se o nome contém apenas letras e espaços
             if re.match("^[A-Za-zÀ-ÿ ]+$", self.nome_cliente):
                 break
-            else:
-                print("Nome inválido. O nome não pode conter números ou caracteres especiais. Tente novamente.")
-                tentativa += 1
-        else:
+
+        if tentativa == 3:
             print("Número de tentativas excedido. Retornando ao menu principal.")
-            return
+            return None
 
         self.senha = input("Digite sua senha: \n")
         print(f"Parabéns {self.nome_cliente}, sua conta foi criada!\n"
